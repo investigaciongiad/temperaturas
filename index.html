@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Conversor de temperatura entre Celsius, Fahrenheit y Kelvin. Diseñado para ser fácil de usar y leer.">
+  <title>Conversor de Temperatura 🌡️</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1>🌡️ Conversor de Temperatura</h1>
+      <p class="subtitle">Elige una unidad, escribe el número y mira el resultado. Así de fácil.</p>
+    </header>
+
+    <!-- Paso 1: unidad -->
+    <section class="card" aria-labelledby="title-unit">
+      <h2 id="title-unit"><span class="step">1</span> ¿Qué unidad vas a escribir?</h2>
+      <div class="unit-selector" role="radiogroup" aria-label="Unidad de entrada">
+        <button type="button" class="unit-btn unit-c active" data-unit="C" role="radio" aria-checked="true">
+          °C<small>Celsius</small>
+        </button>
+        <button type="button" class="unit-btn unit-f" data-unit="F" role="radio" aria-checked="false">
+          °F<small>Fahrenheit</small>
+        </button>
+        <button type="button" class="unit-btn unit-k" data-unit="K" role="radio" aria-checked="false">
+          K<small>Kelvin</small>
+        </button>
+      </div>
+    </section>
+
+    <!-- Paso 2: número -->
+    <section class="card" aria-labelledby="title-input">
+      <h2 id="title-input"><span class="step">2</span> Escribe el número</h2>
+      <input id="tempInput" type="text" inputmode="decimal" autocomplete="off"
+             placeholder="Ejemplo: 25,5" aria-label="Temperatura a convertir">
+      <p id="message" class="message" role="alert"></p>
+      <div class="actions">
+        <button type="button" id="clearBtn" class="btn-clear">🧹 Limpiar</button>
+        <button type="button" id="speakBtn" class="btn-speak">🔊 Leer en voz alta</button>
+      </div>
+    </section>
+
+    <!-- Paso 3: resultado -->
+    <section class="card" aria-labelledby="title-result">
+      <h2 id="title-result"><span class="step">3</span> Resultado</h2>
+      <div class="results" aria-live="polite">
+        <article class="result-card rc-c" data-unit="C">
+          <span class="result-value" id="resC">—</span>
+          <span class="result-unit">°C</span>
+          <span class="result-label">Celsius</span>
+        </article>
+        <article class="result-card rc-f" data-unit="F">
+          <span class="result-value" id="resF">—</span>
+          <span class="result-unit">°F</span>
+          <span class="result-label">Fahrenheit</span>
+        </article>
+        <article class="result-card rc-k" data-unit="K">
+          <span class="result-value" id="resK">—</span>
+          <span class="result-unit">K</span>
+          <span class="result-label">Kelvin</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- Paso 4: teclado -->
+    <section class="card" aria-labelledby="title-keypad">
+      <h2 id="title-keypad"><span class="step">4</span> Teclado en pantalla</h2>
+      <div class="keypad" id="keypad" aria-label="Teclado numérico">
+        <button type="button" class="key" data-key="7">7</button>
+        <button type="button" class="key" data-key="8">8</button>
+        <button type="button" class="key" data-key="9">9</button>
+        <button type="button" class="key" data-key="4">4</button>
+        <button type="button" class="key" data-key="5">5</button>
+        <button type="button" class="key" data-key="6">6</button>
+        <button type="button" class="key" data-key="1">1</button>
+        <button type="button" class="key" data-key="2">2</button>
+        <button type="button" class="key" data-key="3">3</button>
+        <button type="button" class="key key-util" data-key="0">0</button>
+        <button type="button" class="key key-util" data-key="." aria-label="Coma decimal">,</button>
+        <button type="button" class="key key-util" data-key="back" aria-label="Borrar">⌫</button>
+      </div>
+    </section>
+
+    <!-- Referencias cotidianas -->
+    <section class="card" aria-labelledby="title-refs">
+      <h2 id="title-refs">🤔 ¿No sabes qué escribir? Prueba estas:</h2>
+      <div class="refs">
+        <button type="button" class="ref-chip" data-unit="C" data-value="100" aria-label="Agua hierve: 100 grados Celsius">💧 Agua hierve</button>
+        <button type="button" class="ref-chip" data-unit="C" data-value="0" aria-label="Agua se congela: 0 grados Celsius">🧊 Agua se congela</button>
+        <button type="button" class="ref-chip" data-unit="C" data-value="-18" aria-label="Congelador: menos 18 grados Celsius">🥶 Congelador</button>
+        <button type="button" class="ref-chip" data-unit="C" data-value="37" aria-label="Cuerpo humano: 37 grados Celsius">🤒 Cuerpo humano</button>
+        <button type="button" class="ref-chip" data-unit="C" data-value="180" aria-label="Horno: 180 grados Celsius">🔥 Horno</button>
+      </div>
+    </section>
+
+    <footer class="footer">Hecho con ❤️ para verse y usarse con claridad.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
