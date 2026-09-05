@@ -295,42 +295,6 @@ body::after {
   animation: cardPulse 0.3s ease-out;
 }
 
-/* ===== Teclado ===== */
-.keypad {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-.key {
-  border: 2px solid #ecdcc6;
-  background: #fff;
-  color: var(--accent);
-  border-radius: 16px;
-  font-family: inherit;
-  font-size: 26px;
-  font-weight: 700;
-  padding: 18px 0;
-  cursor: pointer;
-  min-height: 62px;
-  transition: transform 0.1s ease, background 0.1s ease;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-}
-.key-util {
-  background: #fef3c7;
-  border-color: #f5deb0;
-  color: #92400e;
-}
-.key:active {
-  transform: translateY(2px);
-  background: #ffedd5;
-}
-@media (hover: hover) {
-  .key:hover {
-    background: #fff7ed;
-  }
-}
-
 /* ===== Referencias ===== */
 .refs {
   display: grid;
@@ -367,6 +331,14 @@ body::after {
   text-align: center;
   color: #78716c;
   font-size: 17px;
+}
+.footer p {
+  margin: 4px 0;
+}
+.author {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 18px;
 }
 
 :focus-visible {

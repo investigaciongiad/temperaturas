@@ -8,7 +8,6 @@ const resC = document.getElementById('resC');
 const resF = document.getElementById('resF');
 const resK = document.getElementById('resK');
 const resultCards = Array.from(document.querySelectorAll('.result-card'));
-const keypad = document.getElementById('keypad');
 const clearBtn = document.getElementById('clearBtn');
 const speakBtn = document.getElementById('speakBtn');
 const refButtons = Array.from(document.querySelectorAll('.ref-chip'));
@@ -134,20 +133,6 @@ function selectUnit(u) {
 
 unitButtons.forEach((btn) => {
   btn.addEventListener('click', () => selectUnit(btn.dataset.unit));
-});
-
-/* ===== Teclado ===== */
-keypad.addEventListener('click', (e) => {
-  const btn = e.target.closest('.key');
-  if (!btn) return;
-  const k = btn.dataset.key;
-  if (k === 'back') {
-    input.value = input.value.slice(0, -1);
-  } else {
-    input.value = sanitize(input.value + (k === '.' ? ',' : k));
-  }
-  update();
-  input.focus();
 });
 
 input.addEventListener('input', update);
